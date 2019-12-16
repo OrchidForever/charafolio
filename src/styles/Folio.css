@@ -1,0 +1,32 @@
+.my-gallery-class {
+    padding: 3px;
+}
+.MuiCard-root {
+    margin: 5px;
+}
+
+.card {
+    display: flex;
+  }
+
+  .details {
+    display: flex!important;
+    flex-direction: column!important;
+  }
+
+  .content {
+    flex: 1 0 auto!important;
+    word-wrap: break-word!important;
+    width: 200px!important;
+  }
+
+  .cover {
+    width: 150px;
+  }
+
+  .controls {
+    display: flex!important;
+    align-items: center!important;
+    padding-left: .5em;
+    padding-bottom: .5em;
+  }
