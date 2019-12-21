@@ -85,6 +85,7 @@ export default class Folio extends React.Component {
 
     return (
       <Masonry
+      color="inherit"
                   className={'class-name'} // default ''
                   elementType={'div'} // default 'div'
                   disableImagesLoaded={false} // default false

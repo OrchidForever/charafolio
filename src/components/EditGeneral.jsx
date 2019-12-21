@@ -19,7 +19,8 @@ const useStyles = makeStyles(theme => ({
       width: 200,
     },
     h1: {
-      width: '100%'
+      width: '100%',
+      color: 'white'
     },
     submit: {
         textAlign: 'center',
@@ -119,6 +120,33 @@ export default function EditGeneral(props) {
               }}
               margin="normal"
             />
+            <TextField
+              className={classes.textField}
+              label="Alias"
+              name='alias'
+              defaultValue={character.alias}
+              onChange={handleChange}
+              margin="normal"
+            />
+            <TextField
+              label="Birthday"
+              type="date"
+              name="birthday"
+              defaultValue={character.birthday}
+              className={classes.textField}
+              margin="normal"
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+            <TextField
+              className={classes.textField}
+              label="Gender"
+              name='gender'
+              defaultValue={character.gender}
+              onChange={handleChange}
+              margin="normal"
+            />
             <Autocomplete
                 multiple
                 id="tags-outlined"
@@ -137,17 +165,6 @@ export default function EditGeneral(props) {
                     fullWidth
                 />
                 )}
-            />
-            <TextField
-                label="Biography"
-                name="bio"
-                multiline
-                rows="6"
-                defaultValue={character.bio}
-                onChange={handleChange}
-                //className={classes.textField}
-                margin="normal"
-                fullWidth
             />
             <input
               accept="image/*"

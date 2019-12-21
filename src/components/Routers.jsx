@@ -24,6 +24,8 @@ import "../styles/App.css";
 import request from 'request';
 import util from 'util';
 import axios from 'axios';
+import { ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 const requestPromise = util.promisify(request);
 const header = {'cache-control': 'no-cache',
       Connection: 'keep-alive',
@@ -32,6 +34,7 @@ const header = {'cache-control': 'no-cache',
       'Cache-Control': 'no-cache',
       Accept: '*/*',
       'Content-Type': 'application/json'  };
+      
 
   export default class Routers extends React.Component {
     constructor(props) {
@@ -199,18 +202,25 @@ const header = {'cache-control': 'no-cache',
 
   render() {
     const open = Boolean(this.state.anchorEl);
+    const theme = createMuiTheme({
+      palette: {
+        type: 'dark'
+      },
+    });
     return (
+      <ThemeProvider theme={theme}>
     <Router>
-        <div>
+        <div color="inherit">
       {/* <FormGroup>
         <FormControlLabel
           control={<Toggle checked={auth} onChange={handleChange} aria-label="login switch" />}
           label={auth ? 'Logout' : 'Login'}
         />
       </FormGroup> */}
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" className="title">
+      <AppBar position="static" color="inherit">
+        <Toolbar color="inherit">
+          
+          <Typography variant="h6" className="title" color="inherit">
             CharaFolio
           </Typography>
           {this.state.writer && (
@@ -337,6 +347,7 @@ const header = {'cache-control': 'no-cache',
               }} />
             </Switch>
         </Router>
+        </ThemeProvider>
         )
   }
 }

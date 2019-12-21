@@ -3,6 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import EditGeneral from '../components/EditGeneral';
+import EditMore from '../components/EditMore';
 import Home from './Home';
 import { Button } from '@material-ui/core';
 import {
@@ -43,7 +44,7 @@ import "../styles/Edit.css";
           </AppBar>
           <h1>Edit Character: {this.props.character.name}</h1>
           {this.state.value === '1' && <EditGeneral {...this.props} /> }
-          {this.state.value === '2' && <Home value={this.value} index="2" /> }
+          {this.state.value === '2' && <EditMore {...this.props} index="2" /> }
           <Button 
               className="saveCharacterButton"
               variant="contained" 
